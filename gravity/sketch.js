@@ -39,6 +39,7 @@ function setup() {
   playSpeedE.style("color", "#0474cf");
   playSpeedInput = createSlider(0, 2, 1, 0.25)
   playSpeedInput.position(20, 115)
+  playSpeedInput.style("width", "100px");
   
   spawning = createCheckbox("Click to spawn balls", false)
   spawning.position(20, 140)
@@ -227,7 +228,7 @@ function mousePressed() {
   // check if mouse is within rectangular areas to change sliders/checkboxes
   let inGravArea = (mouseX > 15) && (mouseX < 360) &&
     (mouseY > 50) && (mouseY < 70);
-  let inSpeedArea = (mouseX > 15) && (mouseX < 160) &&
+  let inSpeedArea = (mouseX > 15) && (mouseX < 125) &&
     (mouseY > 110) && (mouseY < 135);
   let inSpawnArea = (mouseX > 20) && (mouseX < 175) &&
     (mouseY > 135) && (mouseY < 165);
@@ -256,7 +257,7 @@ function draw() {  // mainloop
   gravConst = gravInput.value()
   text(gravConst, 25, 80)
   playSpeed = playSpeedInput.value()
-  text(str(playSpeed + "x"), 160, 130)
+  text(str(playSpeed + "x"), 130, 130)
   frameRate(60/playSpeed)
   fill(255, 255, 255)
   if (repulsive.checked()) {
