@@ -35,14 +35,14 @@ function setup() {
   volSlider.style("width", "50px");
   volSlider.position(20, 50)
   
-  gravE = createElement("h3", "Gravitational Constant (default is 100):");
+  gravE = createElement("h3", "Gravity:");
   gravE.style("color", "#0474cf");
   gravE.position(20, 65);
   gravInput = createSlider(0, 1000, 100);
   gravInput.position(20, 110);
-  gravInput.style("width", "250px")
+  gravInput.style("width", "150px")
   repulsive = createCheckbox("Repulsive", false)
-  repulsive.position(275, 110)
+  repulsive.position(175, 110)
   repulsive.style("color", "#0474cf")
   
   playSpeedE = createElement("h3", "Simulation Speed:")
@@ -244,7 +244,7 @@ function mousePressed() {
   // check if mouse is within rectangular areas to change sliders/checkboxes
   let inVolArea = (mouseX > 15) && (mouseX < 125) &&
     (mouseY > 50) && (mouseY < 70);
-  let inGravArea = (mouseX > 15) && (mouseX < 360) &&
+  let inGravArea = (mouseX > 15) && (mouseX < 260) &&
     (mouseY > 110) && (mouseY < 130);
   let inSpeedArea = (mouseX > 15) && (mouseX < 125) &&
     (mouseY > 170) && (mouseY < 165);
