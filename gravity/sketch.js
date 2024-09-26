@@ -7,7 +7,7 @@
 // 6: 3 balls
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-var preset = parseInt(urlParams.get("preset"));
+let preset = parseInt(urlParams.get("preset"));
 if (!preset || preset==0 || preset>6) {
   preset = 1 + Math.floor(Math.random(1, 5) * 5);
 }
