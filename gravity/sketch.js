@@ -1,14 +1,15 @@
-// Presets (setting):
+// Presets:
 // 1: two balls of similar size
-// 2: a smaller ball orbitting a bigger one
-// 3: binary system
-// 4: random :)
-// 5: 3 balls
+// 2: a smaller ball orbiting a bigger one
+// 3: 2 small balls orbiting a bigger one
+// 4: binary system
+// 5: random :)
+// 6: 3 balls
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-var setting = parseInt(urlParams.get("preset"));
-if (!setting || setting==0 || setting>5) {
-  setting = 1 + Math.floor(Math.random(1, 5) * 5);
+var preset = parseInt(urlParams.get("preset"));
+if (!preset || preset==0 || preset>6) {
+  preset = 1 + Math.floor(Math.random(1, 5) * 5);
 }
 
 let gravConst = 100;
@@ -184,7 +185,7 @@ class Ball {
 let balls = [];
 
 // different initial conditions
-switch (setting) {
+switch (preset) {
     case 1:
       balls.push(new Ball({x:400, y:200}, {x:100, y:30}, 50));
       balls.push(new Ball({x:400, y:400}, {x:0, y:0}, 70));
@@ -194,15 +195,20 @@ switch (setting) {
       balls.push(new Ball({x:400, y:400}, {x:0, y:0}, 100));
       break;
     case 3:
+      balls.push(new Ball({x:400, y:270}, {x:155, y:0}, 10));
+      balls.push(new Ball({x:400, y:400}, {x:0, y:0}, 100));
+      balls.push(new Ball({x:300, y:650}, {x:75, y:60}, 15));
+      break;
+    case 4:
       balls.push(new Ball({x:400, y:300}, {x:20, y:0}, 30));
       balls.push(new Ball({x:400, y:500}, {x:-20, y:0}, 30));
       break;
-    case 4:
+    case 5:
       p5 = new p5();  // cannot use random otherwise
       balls.push(new Ball({x:random(0, screenWidth), y:random(0, screenHeight)}, {x:random(-100, 100), y:random(-100, 100)}, random(10, 100)));
       balls.push(new Ball({x:random(0, screenWidth), y:random(0, screenHeight)}, {x:random(-100, 100), y:random(-100, 100)}, random(10, 100)));
       break;
-    case 5:
+    case 6:
       balls.push(new Ball({x:490, y:300}, {x:20, y:30}, 50));
       balls.push(new Ball({x:200, y:700}, {x:-40, y:-10}, 50));
       balls.push(new Ball({x:600, y:500}, {x:80, y:0}, 50));
