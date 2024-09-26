@@ -1,11 +1,15 @@
-// Change this for different starting conditions
-const setting = 1 + Math.floor(Math.random(1, 5) * 5);
-//const setting = 2;
+// Presets (setting):
 // 1: two balls of similar size
 // 2: a smaller ball orbitting a bigger one
 // 3: binary system
 // 4: random :)
 // 5: 3 balls
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var setting = parseInt(urlParams.get("preset"));
+if (!setting || setting==0 || setting>5) {
+  setting = 1 + Math.floor(Math.random(1, 5) * 5);
+}
 
 let gravConst = 100;
 let playSpeed = 1;
