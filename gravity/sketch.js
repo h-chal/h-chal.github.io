@@ -52,7 +52,7 @@ function setup() {
   playSpeedInput.position(20, 175)
   playSpeedInput.style("width", "100px");
   
-  spawning = createCheckbox("Click to spawn balls", false)
+  spawning = createCheckbox("Spawn ball at cursor on click?", false)
   spawning.position(20, 200)
   spawning.style("color", "#0474cf")
 }
@@ -248,7 +248,7 @@ function mousePressed() {
     (mouseY > 110) && (mouseY < 130);
   let inSpeedArea = (mouseX > 15) && (mouseX < 125) &&
     (mouseY > 170) && (mouseY < 165);
-  let inSpawnArea = (mouseX > 20) && (mouseX < 175) &&
+  let inSpawnArea = (mouseX > 20) && (mouseX < 235) &&
     (mouseY > 195) && (mouseY < 225);
   
   // don't spawn balls if changing sliders/checkboxes or if spawning is disabled
