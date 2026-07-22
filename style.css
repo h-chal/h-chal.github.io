@@ -4,8 +4,6 @@ body {
   font-family: sans-serif;
   padding: 2rem;
   line-height: 1.6;
-  max-width: 800px;
-  margin: auto;
 }
 
 a {
@@ -16,13 +14,33 @@ a:hover {
   text-decoration: underline;
 }
 
-
 /* Quotes */
+
+.quote-header {
+  max-width: 30em;
+  margin: 0 auto 3em auto
+}
 
 header h1 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.quote-list {
+  padding: 2em;
+  display: grid; 
+  grid-gap: 3em;
+}
+@media screen and (min-width: 50em) { 
+  .quote-list {
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+@media screen and (min-width: 80em) {
+  .quote-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .text-muted {
@@ -53,7 +71,9 @@ blockquote p {
 /* Homepage */
 
 .main {
+  margin: 0 auto;
   background-color: hsla(216, 66%, 63%, 0.9);
+  max-width: 800px;
   padding: 2em;
   border-radius: 20px;
   color: honeydew;
