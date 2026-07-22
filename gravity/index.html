@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <title>2D Gravity Simulation</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script>
+    function changePreset() {
+      presetSelect = document.getElementById("preset");
+      preset = presetSelect.value;
+      sketchIframe = document.getElementById("sketch");
+
+      currentSrc = sketchIframe.src;
+      url = new URL(currentSrc, window.location.origin);
+      url.searchParams.set("preset", preset);
+      sketchIframe.src = url.href;
+    }
+  </script>
+</head>
+<body>
+  <a href="../">Home</a>
+  <p>
+    This is some old code from 2021 so expect some jank. Best viewed on desktop
+    (balls don't seem to spawn on click for iOS - unsure for Android).
+  </p>
+
+  <select name="preset" id="preset" onchange="changePreset()">
+    <option value="0">Choose for me</option>
+    <option value="1">Two balls of similar size</option>
+    <option value="2">A small ball orbiting a large ball</option>
+    <option value="3">2 small balls orbiting a large ball</option>
+    <option value="4">Binary system</option>
+    <option value="5">2 random balls</option>
+    <option value="6">3 similar size balls</option>
+  </select>
+  <button type="button" onclick="changePreset()">Refresh</button>
+  <br><br>
+
+  <iframe id="sketch" src="sketch.html" width="800px" height="800px"
+  style="border: none;"></iframe>
+</body>

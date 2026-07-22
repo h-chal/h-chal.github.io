@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" href="favicon.ico" sizes="any" type="image/svg+xml">
+  
+  <title>Harper Challinor</title>
+
+  <script src="p5.js"></script>
+  <script src="sketch.js"></script>
+  <script src="https://unpkg.com/delaunator@5.0.0/delaunator.min.js"></script>
+
+  <meta name="theme-color" content="99D1FF">
+</head>
+
+<body>
+  <div class="main">
+    <div class="main-header">
+      <div class="main-header--name-links">
+        <h1 class="main-header--name">Harper Challinor</h1>
+        <div class="main-header--links">
+          <p class="main-header--link">
+            <img src="email.png" class="main-header--link__img" alt="Email icon">
+            harper (at) h-chal (dot) com
+          </p>
+          <p class="main-header--link">
+            <a href="https://www.linkedin.com/in/harper-challinor">
+              <img src="LinkedIn.png" class="main-header--link__img" alt="LinkedIn logo">
+              LinkedIn
+            </a>
+          </p>
+          <p class="main-header--link">
+            <a href="https://github.com/h-chal">
+              <img src="GitHub.png" class="main-header--link__img" alt="GitHub logo">
+              GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <img class="main-header--picture" src="pfp.jpeg" width="140" alt="A picture of Harper">
+        <br>
+        <img src="harpi.png" width="140" style="margin-bottom: 0" alt='Stylised text of "harpi" with wings on either side and a harp replacing the "a"'>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="main-content">
+      <div class="main--intro">
+        <p>
+          Hi, my name is Harper (she/her). I'm a recent Computer Science graduate from
+          the University of Cambridge and I'm currently working at
+          <a href="https://neat.no">Neat</a>
+          on
+          <a href="https://neat.no/stories/neat-open-a-stunning-new-era-for-byod-spaces/">Neat Open</a>!
+        </p>
+      </div>
+
+      <div class="main--drops">
+        <div class="main--drop__outer">
+          <div class="main--drop__inner">
+            <p>
+              <a href="/quotes">Quotes</a>
+            </p>
+            <p>
+              <a href="/gravity">2D Gravity Simulation</a>
+            </p>
+            <p>
+              <a href="dissertation.pdf" style="margin-bottom: 0">Undergraduate Dissertation</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="main--drop__outer">
+          <div class="main--drop__inner">
+            <p>
+              Cloud cover: <span id="cloud-coverage">0.0%</span>
+            </p>
+            <p style="font-size: small;">
+              You are watching
+              <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">delaunated</a>
+              <a href="https://en.wikipedia.org/wiki/Boids">boids</a>.
+              <br>
+              They will run from your cursor/taps!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main--attributions">
+        <hr>
+        <p>
+          "harpi" logo by
+          <a href="https://boorakun.carrd.co/">BooRakun</a>
+        </p>
+        <p>
+          Email icon from
+          <a href="https://www.freepnglogos.com/">freepnglogos</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">Learning the symmetric causality between the flame and its warmth</p>
+  </div>
+</body>
