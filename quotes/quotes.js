@@ -2,7 +2,7 @@ fetch('quotes.json')
   .then(response => response.json())
   .then(data => {
     const quoteList = document.getElementById('quote-list');
-    data.forEach(quote => {
+    data.reverse().forEach(quote => {
       const article = document.createElement('article');
       article.className = 'quote-entry';
 
