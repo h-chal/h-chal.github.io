@@ -32,14 +32,19 @@ header h1 {
   display: grid; 
   grid-gap: 3em;
 }
-@media screen and (min-width: 50em) { 
+@media screen and (min-width: 70em) { 
   .quote-list {
     grid-template-columns: 1fr 1fr;
   }
 } 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 110em) {
   .quote-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 140em) {
+  .quote-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
