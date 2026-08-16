@@ -11,7 +11,8 @@ var frameCounter = 0;
 
 function setup() {
   colorMode(HSL);
-  canvas = createCanvas(windowWidth, windowHeight);
+  const [width, height] = getTargetCanvasDimensions()
+  canvas = createCanvas(width, height);
   canvas.position(0, 0);
   canvas.style('z-index', '-1')
 
@@ -20,13 +21,12 @@ function setup() {
   flock = new Flock();
   // Add an initial set of boids into the system
   for (let i = 0; i < 100; i++) {
-    let b = new Boid(random(0, windowWidth), random(0, windowHeight));
+    let b = new Boid(random(0, width), random(0, height));
     flock.addBoid(b);
   }
 }
 
 function draw() {
-  canvas.resize(windowWidth, windowHeight);
   background(207, 100, 80, 100);
   flock.triangles();
   flock.run();
@@ -42,8 +42,18 @@ function draw() {
   }
 }
 
+function getTargetCanvasDimensions() {
+  const css = getComputedStyle(canvas.parentElement);
+  const marginWidth = round(float(css.marginLeft) + float(css.marginRight));
+  const marginHeight = round(float(css.marginTop) + float(css.marginBottom));
+  const w = windowWidth - marginWidth;
+  const h = windowHeight - marginHeight;
+  return [w, h];
+}
+
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight); // iOS weirdness
+  const [w, h] = getTargetCanvasDimensions()
+  resizeCanvas(w, h)
 }
 
 

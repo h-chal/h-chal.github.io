@@ -193,3 +193,6 @@ blockquote p {
   text-align: center;
   color:hsl(234, 79%, 65%)
 }
+
+
+* { outline: 1px solid red; }
